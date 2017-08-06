@@ -1,0 +1,68 @@
+version: "2"
+
+services:
+  nextcloud:
+    build: "."
+    ports:
+      - "127.0.0.1:8080:80"
+    links: ["db", "s3"]
+    environment:
+      DEBUG: "1"
+      NEXTCLOUD_DB_TYPE: "mysql"
+      NEXTCLOUD_DB_HOST: "db"
+      NEXTCLOUD_DB_USER: "nextcloud"
+      NEXTCLOUD_DB_PASSWORD: "pass"
+      NEXTCLOUD_DB_NAME: "nextcloud"
+      NEXTCLOUD_PASSWORD_SALT: "salty"
+      NEXTCLOUD_ADMIN_USER: "admin"
+      NEXTCLOUD_ADMIN_PASS: "pass"
+      NEXTCLOUD_SMTP_HOST: "smtp"
+      NEXTCLOUD_SMTP_PORT: "1025"
+      NEXTCLOUD_SMTP_AUTHN_TYPE: "LOGIN"
+      NEXTCLOUD_SMTP_AUTHN_USER: "user"
+      NEXTCLOUD_SMTP_AUTHN_PASSWORD: "pass"
+      NC_s3_hostname: "s3"
+      NC_s3_port: "9000"
+      NC_s3_use_ssl: "0"
+      NC_s3_use_path_style: "1"
+      NC_s3_bucket: "nextcloud"
+      NC_s3_key: "access"
+      NC_s3_secret: "secretsecret"
+      NC_s3_autocreate: "1"
+
+  db:
+    image: "mysql:5"
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_ONETIME_PASSWORD: "yes"
+      MYSQL_DATABASE: "nextcloud"
+      MYSQL_USER: "nextcloud"
+      MYSQL_PASSWORD: "pass"
+    volumes:
+      - "db:/var/lib/mysql"
+
+  s3:
+    image: "minio/minio"
+    command: ["server", "/var/minio"]
+    environment:
+      MINIO_ACCESS_KEY: "access"
+      MINIO_SECRET_KEY: "secretsecret"
+    volumes:
+      - "s3:/var/minio"
+    ports:
+      - "127.0.0.1:9000:9000"
+
+  smtp:
+    image: "djfarrelly/maildev:1.0.0-rc2"
+    command:
+      - "bin/maildev"
+      - "--incoming-user"
+      - "user"
+      - "--incoming-pass"
+      - "pass"
+    ports:
+      - "127.0.0.1:1080:1080"
+
+volumes:
+  db:
+  s3:
