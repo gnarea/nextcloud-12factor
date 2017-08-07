@@ -28,14 +28,14 @@ Customisable:
 
 Also:
 
-- `NC_s3_bucket` (required)
-- `NC_s3_key` (required)
-- `NC_s3_secret` (required)
-- `NC_s3_autocreate`
-- `NC_s3_hostname`
-- `NC_s3_port`
-- `NC_s3_use_ssl` (default: `true`; use `0` to disable)
-- `NC_s3_use_path_style`
+- `NEXTCLOUD_S3_BUCKET` (required)
+- `NEXTCLOUD_S3_ACCESS_KEY` (required)
+- `NEXTCLOUD_S3_SECRET_KEY` (required)
+- `NEXTCLOUD_S3_AUTOCREATE`
+- `NEXTCLOUD_S3_HOSTNAME`
+- `NEXTCLOUD_S3_PORT`
+- `NEXTCLOUD_S3_SSL` (default: `true`; use `0` to disable)
+- `NEXTCLOUD_S3_USE_PATH_STYLE`
 
 More options can be set by adding configuration files to `/usr/src/nextcloud/config`.
 

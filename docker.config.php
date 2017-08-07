@@ -32,14 +32,14 @@ $CONFIG = array(
     'objectstore' => array(
         'class' => 'OC\\Files\\ObjectStore\\S3',
         'arguments' => array(
-            'bucket' => getenv('NC_s3_bucket'),
-            'autocreate' => (bool) getenv('NC_s3_autocreate'),
-            'key' => getenv('NC_s3_key'),
-            'secret' => getenv('NC_s3_secret'),
-            'hostname' => getenv('NC_s3_hostname'),
-            'port' => getenv('NC_s3_port'),
-            'use_ssl' => getenv('NC_s3_use_ssl') != "0",
-            'use_path_style' => (bool) getenv('NC_s3_use_path_style'),
+            'bucket' => getenv('NEXTCLOUD_S3_BUCKET'),
+            'autocreate' => (bool) getenv('NEXTCLOUD_S3_AUTOCREATE'),
+            'key' => getenv('NEXTCLOUD_S3_ACCESS_KEY'),
+            'secret' => getenv('NEXTCLOUD_S3_SECRET_KEY'),
+            'hostname' => getenv('NEXTCLOUD_S3_HOSTNAME'),
+            'port' => getenv('NEXTCLOUD_S3_PORT'),
+            'use_ssl' => getenv('NEXTCLOUD_S3_SSL') != "0",
+            'use_path_style' => (bool) getenv('NEXTCLOUD_S3_USE_PATH_STYLE'),
         ),
     ),
 );
