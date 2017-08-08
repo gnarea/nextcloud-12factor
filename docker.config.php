@@ -42,6 +42,7 @@ $CONFIG = array(
             'use_path_style' => (bool) getenv('NEXTCLOUD_S3_USE_PATH_STYLE'),
         ),
     ),
+    'quota_include_external_storage' => true,
 
     // Make the environment immutable
     'config_is_read_only' => true,
