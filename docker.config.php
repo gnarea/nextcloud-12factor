@@ -42,6 +42,11 @@ $CONFIG = array(
             'use_path_style' => (bool) getenv('NEXTCLOUD_S3_USE_PATH_STYLE'),
         ),
     ),
+
+    // Make the environment immutable
+    'config_is_read_only' => true,
+    'appstoreenabled' => false,
+    'upgrade.disable-web' => true,
 );
 
 $CONFIG['loglevel'] = $CONFIG['debug'] ? 0 : 2;
