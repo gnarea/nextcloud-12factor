@@ -6,6 +6,7 @@
 
 $CONFIG = array(
     'debug' => (bool) getenv('DEBUG'),
+    'overwrite.cli.url' => getenv('NEXTCLOUD_URL'),
     'log_type' => 'errorlog',
     'datadirectory' => getenv('NEXTCLOUD_DATA_PATH'),
     'skeletondirectory' => '',

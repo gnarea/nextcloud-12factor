@@ -8,6 +8,7 @@ services:
     links: ["db", "s3"]
     environment:
       DEBUG: "1"
+      NEXTCLOUD_URL: "http://localhost:8080"
       NEXTCLOUD_DB_TYPE: "mysql"
       NEXTCLOUD_DB_HOST: "db"
       NEXTCLOUD_DB_USER: "nextcloud"

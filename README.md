@@ -7,6 +7,7 @@ primary storage.
 Customisable:
 
 - `DEBUG`.
+- `NEXTCLOUD_URL`.
 - `NEXTCLOUD_DATA_PATH`.
 - `NEXTCLOUD_SECRET`.
 - `NEXTCLOUD_PASSWORD_SALT`.
