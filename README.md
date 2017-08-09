@@ -17,6 +17,8 @@ Customisable:
 - `NEXTCLOUD_DB_PASSWORD`.
 - `NEXTCLOUD_DB_NAME`.
 - `NEXTCLOUD_DB_TABLE_PREFIX` (default: empty string).
+- `NEXTCLOUD_MAIL_SENDER_DOMAIN`.
+- `NEXTCLOUD_MAIL_SENDER_USER`.
 - `NEXTCLOUD_SMTP_HOST`.
 - `NEXTCLOUD_SMTP_PORT`.
 - `NEXTCLOUD_SMTP_ENCRYPTION` (default: empty string; also valid: "tls" or "ssl").

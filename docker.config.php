@@ -20,6 +20,8 @@ $CONFIG = array(
     'dbname' => getenv('NEXTCLOUD_DB_NAME'),
     'dbtableprefix' => getenv('NEXTCLOUD_DB_TABLE_PREFIX') ?: "",
 
+    'mail_domain' => getenv('NEXTCLOUD_MAIL_SENDER_DOMAIN'),
+    'mail_from_address' => getenv('NEXTCLOUD_MAIL_SENDER_USER'),
     'mail_smtpmode' => "smtp",
     'mail_smtphost' => getenv('NEXTCLOUD_SMTP_HOST'),
     'mail_smtpport' => getenv('NEXTCLOUD_SMTP_PORT'),
